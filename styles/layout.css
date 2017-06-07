@@ -64,3 +64,29 @@ article img {
     outline-style: solid;
 }
 
+#about header {
+    background-image: url(../images/lineup.gif);
+}
+#photos header {
+    background-image: url(../images/basshead.gif);
+}
+#live header {
+    background-image: url(../images/bassist.gif);
+}
+#contact header {
+    background-image: url(../images/drummer.gif);
+}
+
+#slideshow {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+#preview {
+    position: absolute;
+    border-width: 0;
+    outline-width: 0;
+}
+
