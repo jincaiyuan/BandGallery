@@ -93,6 +93,11 @@ function prepareSlideshow(){
     var intro = document.getElementById("intro");
     var slideshow = document.createElement("div");
     slideshow.setAttribute("id", "slideshow");
+    //This is a small pic to put slideshow pic.
+    var frame = document.createElement("img");
+    frame.setAttribute("src", "images/frame.gif");
+    frame.setAttribute("id", "frame");
+    slideshow.appendChild(frame);
     var preview = document.createElement("img");
     preview.setAttribute("src", "images/slideshow.gif");
     preview.setAttribute("alt", "Preview images");
@@ -100,7 +105,7 @@ function prepareSlideshow(){
     slideshow.appendChild(preview);
     insertAfter(slideshow, intro);
 
-    var links = intro.getElementsByTagName("a");
+    var links = document.getElementsByTagName("a");
     for(var i = 0; i < links.length; i++){
         links[i].onmouseover = function() {
             destination = this.getAttribute("href");
