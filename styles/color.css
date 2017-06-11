@@ -84,10 +84,23 @@ tr.highlight td {
   background-color: #cba;
 }
 
-
-
-
-
 input.placeholder {
   color: grey;
+}
+
+th {
+  color: #edc;
+  background-color: #455;
+}
+tr td {
+  color: #233;
+  background-color: #eb6;
+}
+tr.odd td {
+  color: #223;
+  background-color: #ec8;
+}
+tr.highlight td {
+  color: #223;
+  background-color: #cba;
 }

@@ -238,3 +238,46 @@ function prepareGallery() {
 }
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
+
+//live.html
+function stripeTables() {
+    //1. get Table object
+    if (!document.getElementsByTagName("table")) {
+        return false;
+    }
+    var tables = document.getElementsByTagName("table");
+    for (var i = 0; i < tables.length; i++) {
+        var rows = tables[i].getElementsByTagName("tr");
+        //2. addClass(rows[j], "odd");
+        var odd = false;
+        for (var j = 0; j < rows.length; j++) {
+            if (odd) {
+                addClass(rows[j], "odd");
+                odd = false;
+            } else {
+                odd = true;
+            }
+        }
+    }
+}
+addLoadEvent(stripeTables);
+
+function highlightRows() {
+    //1. response rows[i].onmouseover
+    var rows = document.getElementsByTagName("tr");
+    for (var i = 0; i < rows.length; i ++) {
+        //2. addClass(rows[i], "highlight")
+        rows[i].oldClassName = rows[i].className;
+        rows[i].onmouseover = function() {
+            addClass(this, "highlight");
+        }
+        rows[i].onmouseout = function() {
+            this.className = this.oldClassName;
+        }
+    }  
+}
+addLoadEvent(highlightRows);
+
+function displayAbbreviations() {
+    
+}
