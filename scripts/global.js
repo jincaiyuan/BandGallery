@@ -278,6 +278,4 @@ function highlightRows() {
 }
 addLoadEvent(highlightRows);
 
-function displayAbbreviations() {
-    
-}
+//contact.html
