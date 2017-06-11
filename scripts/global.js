@@ -179,3 +179,62 @@ function prepareInternalNav(){
     }
 }
 addLoadEvent(prepareInternalNav);
+
+//photos.html
+//ToDo: check if id or element exists
+function preparePlaceholder(){
+    if(!document.getElementById("imagegallery")){
+        return false;
+    }
+    var imagegallery = document.getElementById("imagegallery");
+    //1. create a image node to place thumbnail image. Set attributes
+    var placeholder = document.createElement("img");
+    placeholder.setAttribute("id", "placeholder");
+    placeholder.setAttribute("src", "images/placeholder.gif");
+    placeholder.setAttribute("alt", "My image gallery");
+    //2. create a p node to place a text. Set attributes
+    var description = document.createElement("p");
+    description.setAttribute("id", "description");
+    //3. create a text node to set a text "Choose an image" under p node
+    var descText = document.createTextNode("Choose an image");
+    description.appendChild(descText);
+    //4. insert image node and p node after #magegallery
+    insertAfter(description, imagegallery);
+    insertAfter(placeholder, description);
+}
+
+//whichPic: node <a>
+function showPic(whichPic){
+    //1. get href of whichPic
+    if (!document.getElementById("placeholder")) {
+        return false;
+    }
+    var source = whichPic.getAttribute("href");
+    var placeholder = document.getElementById("placeholder");
+    //2. place the pic into placeholder
+    placeholder.setAttribute("src", source);
+    //3. set discription of p node's text to whichPic's title
+    var title = whichPic.getAttribute("title");
+    var description = document.getElementById("description");
+    description.firstChild.nodeValue = title;
+    return false;
+}
+
+function prepareGallery() {
+    //1. reponse to onclick events of href in #imagegallery
+    if (!document.getElementById("imagegallery")) {
+        return false;
+    }
+    var gallery = document.getElementById("imagegallery");
+    var links = gallery.getElementsByTagName("a");
+    if(links.length == 0) {
+        return false;
+    }
+    for (var i = 0; i < links.length; i++) {
+        links[i].onclick = function() {
+            return showPic(this);
+        }
+    }
+}
+addLoadEvent(preparePlaceholder);
+addLoadEvent(prepareGallery);
