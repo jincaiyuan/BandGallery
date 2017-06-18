@@ -1,0 +1,46 @@
+1. css font famliy:
+    Sans-serif {
+        Verdana;
+        Arial Black;
+        Trebuchet MS;
+        Arial;
+        Geneva;
+    }
+
+    Serif {
+        Times;
+        Times New Roman;
+        Georgia;
+    }
+
+    Monospace {
+        Courier;
+        Courier New;
+        Andale Mono;
+    }
+
+    Cursive {
+        Comic Sans;
+        Apple Chancery;
+    }
+
+    Fantasy {
+        LAST NINJA;
+        Impact;
+    }
+
+2. font size:
+    1.2em means in this part size is 1.2 larger than its parent part. For example,
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 150%;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    
+    Tips about how to set the font size:
+    a. Choose a key word (like small or medium) to be the font in the body.
+    b. Use em or percentage to determine font size of other parts in body.
